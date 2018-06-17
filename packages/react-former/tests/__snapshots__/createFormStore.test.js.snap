@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`this is not enough 1`] = `
+Object {
+  "fields": Object {
+    "password": Object {
+      "isValid": null,
+      "validationResult": null,
+      "value": "pwisstronk",
+    },
+    "username": Object {
+      "isValid": null,
+      "validationResult": null,
+      "value": "AlicanC",
+    },
+  },
+  "isValid": null,
+}
+`;
