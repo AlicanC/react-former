@@ -1,6 +1,6 @@
 {
   "name": "react-former",
-  "version": "0.0.1",
+  "version": "0.2.0",
   "description": "A flexible way of creating forms with React",
   "main": "src/index.js",
   "repository": "git@github.com:AlicanC/react-former.git",
