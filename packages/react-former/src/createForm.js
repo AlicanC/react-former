@@ -42,7 +42,7 @@ type FieldDescriptorFromDescriptor<Descriptor: FormDescriptor, FieldKey: string>
 export type Form<Descriptor: FormDescriptor> = $ReadOnly<{|
   descriptor: Descriptor,
   getState: $PropertyType<FormStore<Descriptor>, 'getState'>,
-  subscribe: $PropertyType<FormStore<Descriptor>, 'addConsumer'>,
+  subscribe: $PropertyType<$PropertyType<FormStore<Descriptor>, 'updates'>, 'subscribe'>,
   getField: <FieldKey: string>(
     fieldKey: FieldKey,
   ) => $Call<
@@ -58,13 +58,9 @@ export type Form<Descriptor: FormDescriptor> = $ReadOnly<{|
 export default function createForm<Descriptor: FormDescriptor>(
   descriptor: Descriptor,
 ): Form<Descriptor> {
-  const {
-    getState,
-    addConsumer: subscribe,
-    updateState,
-    getFieldState,
-    updateFieldState,
-  } = createFormStore(descriptor);
+  const { getState, updates, updateState, getFieldState, updateFieldState } = createFormStore(
+    descriptor,
+  );
 
   const setFieldValidationResult = (fieldKey, validationResult) => {
     // $FlowFixMe
@@ -145,7 +141,7 @@ export default function createForm<Descriptor: FormDescriptor>(
     descriptor,
     getState,
     getData,
-    subscribe,
+    subscribe: (fn) => updates.subscribe(fn),
     getField,
     validate,
   };

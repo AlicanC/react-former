@@ -7,6 +7,6 @@
   "author": "Alican Çubukçuoğlu <alicancubukcuoglu@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "reductress-core": "^0.0.3-alpha.4"
+    "reductress-core": "^0.1.2"
   }
 }

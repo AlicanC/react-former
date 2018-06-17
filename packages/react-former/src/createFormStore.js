@@ -1,11 +1,6 @@
 // @flow
 
-import {
-  createStore,
-  createObservableProvider,
-  type Store,
-  type ObservableProviderAddConsumer,
-} from 'reductress-core';
+import { createStore, type Store } from 'reductress-core';
 
 import { type FormDescriptor, type FieldDescriptor } from './createForm';
 
@@ -45,10 +40,7 @@ export type FormState<Descriptor: FormDescriptor> = $ReadOnly<{
   isValid: Validity,
 }>;
 
-export type FormStore<Descriptor: FormDescriptor> = Store<
-  FormState<Descriptor>,
-  ObservableProviderAddConsumer<FormState<Descriptor>>,
-> &
+export type FormStore<Descriptor: FormDescriptor> = Store<FormState<Descriptor>> &
   $ReadOnly<{
     updateState: (formState: $Shape<FormState<Descriptor>>) => void,
     // $FlowFixMe
@@ -77,9 +69,7 @@ export default function createFormStore<Descriptor: FormDescriptor>(
     isValid: null,
   };
 
-  const provider = createObservableProvider();
-
-  const reductressStore = createStore(provider, initialState);
+  const reductressStore = createStore(initialState);
 
   const updateState = (formState) => {
     const state = reductressStore.getState();
