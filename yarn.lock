@@ -4483,9 +4483,9 @@ redent@^2.0.0:
     indent-string "^3.0.0"
     strip-indent "^2.0.0"
 
-reductress-core@^0.0.3-alpha.4:
-  version "0.0.3-alpha.4"
-  resolved "https://registry.yarnpkg.com/reductress-core/-/reductress-core-0.0.3-alpha.4.tgz#d0a5d13e066f2f271eba0c1f2be34d54d245a029"
+reductress-core@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/reductress-core/-/reductress-core-0.1.2.tgz#f7509438f12f9bd19c922e0960b85b1f3a0b7c60"
   dependencies:
     zen-observable "^0.8.8"
 
