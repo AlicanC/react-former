@@ -1,4 +1,7 @@
 {
+  "version": "0.4.0",
+  "name": "react-former",
+  "main": "./packages/react-former/src/index.js",
   "private": true,
   "author": "Alican Çubukçuoğlu <alicancubukcuoglu@gmail.com>",
   "license": "MIT",
